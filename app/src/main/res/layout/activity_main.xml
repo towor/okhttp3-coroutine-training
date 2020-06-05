@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
+    <data>
+        <variable
+            name="whetherViewModel"
+            type="io.github.towor.okhttp3withcoroutinetraining.WeatherViewModel" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="270000"
+                android:text="大阪"
+                android:onClick="@{v -> whetherViewModel.getTelop(v)}"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="130010"
+                android:text="東京"
+                android:onClick="@{v -> whetherViewModel.getTelop(v)}"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="230010"
+                android:text="名古屋"
+                android:onClick="@{v -> whetherViewModel.getTelop(v)}"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="@{whetherViewModel.telop}"/>
+
+    </LinearLayout>
+
+</layout>
